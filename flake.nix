@@ -40,10 +40,8 @@
       packages = forEachSystem (pkgs: {
         default = pkgs.callPackage package { };
       });
-      overlays = [
-        (final: prev: {
-          refal-5-lambda = final.callPackage package { };
-        })
-      ];
+      overlays.default = final: prev: {
+        refal-5-lambda = final.callPackage package { };
+      };
     };
 }
