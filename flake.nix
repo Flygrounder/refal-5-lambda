@@ -29,8 +29,8 @@
             mkdir $out/bin
             ln -s $DISTDIR/bin/* $out/bin
             rm $out/bin/rlc $out/bin/rlmake
-            echo -e "#!${pkgs.bash}/bin/bash\n$DISTDIR/bin/rlc \$@" > $out/bin/rlc
-            echo -e "#!${pkgs.bash}/bin/bash\n$DISTDIR/bin/rlmake \$@" > $out/bin/rlmake
+            echo -e "#!${pkgs.bash}/bin/bash\n$DISTDIR/bin/rlc \"\$@\"" > $out/bin/rlc
+            echo -e "#!${pkgs.bash}/bin/bash\n$DISTDIR/bin/rlmake \"\$@\"" > $out/bin/rlmake
             chmod u+x $out/bin/rlc $out/bin/rlmake
           '';
           dontStrip = true;
